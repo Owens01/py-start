@@ -1,11 +1,11 @@
-# def add(val1, val2):
-#     return val1 + val2
+def add(val1, val2):
+    return val1 + val2
 
 
-# user = input("Add a value: ")
-# result = add(4, int(user))
+user = input("Add a value: ")
+result = add(4, int(user))
 
-# print(result)
+print(result)
 
 
 # keyword arguments
