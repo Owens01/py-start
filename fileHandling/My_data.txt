@@ -1,0 +1,5 @@
+File handling
+Exception handling
+Conditions and loops
+python
+Variables and data types
