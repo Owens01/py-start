@@ -25,3 +25,9 @@ def get_product(id: int):
             return product
     return {"error": "Product not found"}
 
+
+# create product
+@app.post("/product", response_model=Product)
+def create_product(product: Product):
+    products.append(product)
+    return product
