@@ -31,3 +31,14 @@ def get_product(id: int):
 def create_product(product: Product):
     products.append(product)
     return product
+
+
+# update product
+@app.put("/product/{id}")
+def update_product(id: int, updated_product: Product):
+    for i, product in enumerate(products):
+        if product.id == id:
+            products[i] = updated_product
+            return {"message": "Product updated successfully"}
+
+    return updated_product
