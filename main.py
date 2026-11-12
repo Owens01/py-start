@@ -41,4 +41,14 @@ def update_product(id: int, updated_product: Product):
             products[i] = updated_product
             return {"message": "Product updated successfully"}
 
-    return updated_product
+    return {"error": "Product not found"}
+
+
+# delete product
+@app.delete("/product/{id}")
+def delete_product(id: int):
+    for i, product in enumerate(products):
+        if product.id == id:
+            del products[i]
+            return {"message": "Product deleted successfully"}
+    return {"error": "Product not found"}
