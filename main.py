@@ -10,7 +10,18 @@ products = [
     Product(id=3, name="Product C", price=7.99),
 ]
 
+
 # function to get products
 @app.get("/products", response_model=list[Product])
 def get_products():
     return products
+
+
+#  get product by id
+@app.get("/product/{id}", response_model=Product)
+def get_product(id: int):
+    for product in products:
+        if product.id == id:
+            return product
+    return {"error": "Product not found"}
+
